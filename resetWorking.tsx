@@ -338,23 +338,25 @@ const Login: React.FC<LoginProps> = ({ showPopup, onLoginSuccess }) => {
       {/* Forget password  */}
       <Dialog open={showRecoveryDialog} onClose={handleCloseRecoveryDialog}>
         <ResetContainer>
-          <DialogTitle
+            <DialogTitle
             style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
+              position: "relative", 
             }}
           >
-            <LoginText>Forgot Password</LoginText>
             <IconButton
               edge="end"
               color="inherit"
               aria-label="close"
               onClick={handleCloseRecoveryDialog}
+              style={{ position: "absolute", right: 0, top: 0 }} 
             >
               <CloseIcon />
             </IconButton>
           </DialogTitle>
+          <LoginText>Forgot Password</LoginText>
           <form onSubmit={handlePasswordResetSubmit}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
@@ -428,18 +430,20 @@ const Login: React.FC<LoginProps> = ({ showPopup, onLoginSuccess }) => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
+              position: "relative", // Add this line
             }}
           >
-            <LoginText>Forgot Password</LoginText>
             <IconButton
               edge="end"
               color="inherit"
               aria-label="close"
               onClick={handleCloseRecoveryDialog}
+              style={{ position: "absolute", right: 0, top: 0 }} // Add this style
             >
               <CloseIcon />
             </IconButton>
           </DialogTitle>
+            <LoginText>Forgot Password</LoginText>
 
           <form onSubmit={handlePasswordRecoverySubmit}>
             <Grid container spacing={2}>
